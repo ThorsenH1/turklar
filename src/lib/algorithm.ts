@@ -129,7 +129,7 @@ export function getClothingRecommendation(
     rec.fotter.push(pickFromWardrobe('fotter', 'Varme vintersko med ullsokker', wardrobe));
   } else if (activity === 'løpe' || activity === 'rask_gange') {
     rec.fotter.push(pickFromWardrobe('fotter', weather.precipitation > 0 ? 'Trail/Gore-Tex Løpesko' : 'Løpesko', wardrobe));
-  } else if (activity === 'sykle' || activity === 'rask_sykling' || activity === 'rolig_sykling') {
+  } else if (activity === 'rask_sykling' || activity === 'rolig_sykling') {
     rec.fotter.push(pickFromWardrobe('fotter', 'Sneakers / Sykkelsko', wardrobe));
   } else {
     rec.fotter.push(pickFromWardrobe('fotter', 'Gode gåsko / tursko', wardrobe));

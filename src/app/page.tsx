@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { loginWithGoogle, logout, auth } from "@/lib/firebase";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { getUserProfile, savePreferences, saveWardrobe, saveUserBasicInfo, getAllUsers } from "@/lib/db";
-import { UserProfileData, defaultPreferences, defaultWardrobe, ActivityType } from "@/lib/types";
+import { UserProfileData, defaultPreferences, defaultWardrobe, ActivityType, Wardrobe } from "@/lib/types";
 import { getWeather, WeatherData } from "@/lib/weather";
 import { getClothingRecommendation, ClothingRecommendation } from "@/lib/algorithm";
 import { 
@@ -322,7 +322,7 @@ export default function Home() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
-                {['hode', 'overkropp', 'underkropp', 'fotter', 'ekstra'].map((category) => (
+                {(['hode', 'overkropp', 'underkropp', 'fotter', 'ekstra'] as (keyof Wardrobe)[]).map((category) => (
                   <div key={category} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
                     <h3 className="font-bold text-lg text-slate-800 capitalize mb-4 text-indigo-900 border-b border-slate-200 pb-2">
                       {category}
