@@ -329,7 +329,7 @@ export default function Home() {
                     </h3>
                     
                     <ul className="space-y-2 mb-4">
-                      {profile.wardrobe[category as keyof Wardrobe].map((item, idx) => (
+                      {(profile.wardrobe[category as keyof Wardrobe] || []).map((item, idx) => (
                         <li key={idx} className="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm border border-slate-100 text-sm font-medium text-slate-700">
                           {item}
                           <button onClick={() => handleRemoveWardrobeItem(category as keyof Wardrobe, idx)} className="text-red-400 hover:text-red-600 text-xs font-bold uppercase tracking-wider px-2 py-1 bg-red-50 rounded-md">
@@ -337,7 +337,7 @@ export default function Home() {
                           </button>
                         </li>
                       ))}
-                      {profile.wardrobe[category as keyof Wardrobe].length === 0 && (
+                      {(profile.wardrobe[category as keyof Wardrobe] || []).length === 0 && (
                         <p className="text-sm text-slate-400 italic">Ingenting lagt til</p>
                       )}
                     </ul>
